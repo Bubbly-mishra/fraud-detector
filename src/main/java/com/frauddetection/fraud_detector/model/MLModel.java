@@ -11,6 +11,15 @@ public class MLModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String modelName;
+    private String modelType;
+    private LocalDateTime trainedAt;
+    private Double accuracy;
+    private Double precision;
+    private Double recall;
+    private Double f1Score;
+    private String modelPath;
+    private Boolean isActive;
 
     public Long getId() {
         return id;
@@ -91,14 +100,4 @@ public class MLModel {
     public void setActive(Boolean active) {
         isActive = active;
     }
-
-    private String modelName;
-    private String modelType;
-    private LocalDateTime trainedAt;
-    private Double accuracy;
-    private Double precision;
-    private Double recall;
-    private Double f1Score;
-    private String modelPath;
-    private Boolean isActive;
 }

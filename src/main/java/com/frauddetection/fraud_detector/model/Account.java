@@ -1,5 +1,6 @@
 package com.frauddetection.fraud_detector.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,6 +20,7 @@ public class Account {
     private LocalDateTime lastLogin;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Transaction> transactions;
 
     // Behavioral patterns
