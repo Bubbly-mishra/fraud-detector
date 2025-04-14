@@ -55,6 +55,7 @@ public class FraudDetectionService {
         classifier = new RandomForest();
     }
 
+    //Important this to consider
     public Double predictFraud(Transaction transaction) {
         Instance instance = convertTransactionToInstance(transaction);
         try {
